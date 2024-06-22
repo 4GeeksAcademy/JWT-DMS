@@ -22,6 +22,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
 			},
+			logOut: () => {
+				sessionStorage.removeItem('token');
+				setStore({ token: null });
+			},
+
 			getMessage: async () => {
 				try {
 					const resp = await fetch(process.env.BACKEND_URL + "/api/hello");

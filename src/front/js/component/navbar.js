@@ -14,19 +14,23 @@ export const Navbar = () => {
 				</Link>
 				{
 					!store.token && <>
-					<div className="ml-auto">
-					<Link to="/signin">
-						<button className="btn btn-primary">Sign In</button>
-					</Link>
-				</div>
-				<div className="ml-auto">
-					<Link to="/signup">
-						<button className="btn btn-primary">Sign Up</button>
-					</Link>
-				</div>
-					</>
+						<div className="ml-auto">
+							<Link to="/signin">
+								<button className="btn btn-primary">Sign In</button>
+							</Link>
+						</div>
+						<div className="ml-auto">
+							<Link to="/signup">
+								<button className="btn btn-primary">Sign Up</button>
+							</Link>
+						</div>
+					</> || <div className="ml-auto">
+						<Link to="/signin">
+							<button className="btn btn-primary" onClick={() => actions.logOut()} >Logout</button>
+						</Link>
+					</div>
 				}
-				
+
 			</div>
 		</nav>
 	);
